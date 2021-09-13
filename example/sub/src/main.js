@@ -1,4 +1,4 @@
-import Vue from 'vue'
+import Vue from 'vue/dist/vue';
 import App from './App.vue'
 
 Vue.config.productionTip = false
@@ -14,22 +14,24 @@ const routes = {
   '/about': About
 }
 
-export const bootstrap = () => {
-  app = new Vue({
+export const bootstrap = async () => {
+  alert(123)
+  app = await new Vue({
     render: (h) => h(App),
   })
 }
 
-export const mount = () => {
+export const mount = async () => {
   app.$mount('#app')
 }
 
-export const unmount = () => {
+export const unmount = async () => {
   app.$destroy()
 }
 
+// bootstrap()
 new Vue({
-  el: '#app',
+  el: '#test',
   data: {
     currentRoute: window.location.pathname
   },
